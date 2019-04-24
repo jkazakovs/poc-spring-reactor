@@ -1,0 +1,10 @@
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        git(url: 'ssh://git@git.loca:/git-server/repos/gas-spring.git', branch: 'master', poll: true)
+      }
+    }
+  }
+}
